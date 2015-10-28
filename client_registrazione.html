@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Untitled 1</title>
+<link rel="stylesheet" type="text/css" href="css_chat.css"/>
+<script type="text/javascript" src="jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js_nickname.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+        principale();
+})
+</script>
+
+<script type="text/javascript">
+var ws = new WebSocket("ws://192.168.1.105:3001");
+$.getJSON("http://jsonip.com?callback=?", function (data) {
+    console.log("a");
+    ip = data.ip
+   });
+function principale(){
+var pos = $("#form_registrazione").position();
+$("#form_registrazione").css('margin-top',pos.top + 250 +"px");
+$("#form_registrazione").css('margin-left',pos.left + 500 + "px");
+
+$("#btn_ok").click(function(){
+     ws.send("#" + $("#nick").val() + "#" + ip.toString());
+     
+     console.log("nickname inviato" + "#" + ip);
+})
+
+}
+
+
+</script>
+
+
+</head>
+
+<body>
+     <form id="form_registrazione">
+      <div id="nickdiv">Nickname</div>
+      <input type="text" id="nick"/>
+   <!-- <a href="chat_client.html"> -->  <input type="button" id="btn_ok" value="ok"/> <!-- </a> --> 
+     </form>
+</body>
+
+</html>

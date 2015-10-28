@@ -1,0 +1,43 @@
+﻿body{
+background-image:url('pokemon.jpg');
+background-color:black;
+}
+
+#form_chat{
+	width:900px;
+	height:600px;
+	background: rgba(0,0,0,0.5);
+    font-style:normal;
+    color:white;  
+}
+
+#messaggio{
+	width:800px;
+}
+
+#btn_invia{
+   width:70px;
+   height:23px;
+}
+
+
+#form_registrazione{
+	background-color:rgba(0,0,0,0.5);
+	border:0px;
+	width:200px;
+	height:300px;
+}
+
+
+
+#nick{
+    border-left: medium;
+    border-top:200px;
+}
+
+#nickdiv{
+	 text-align:center;
+     color:white;
+     font-weight:normal;
+     margin:0 0 40px;
+}
